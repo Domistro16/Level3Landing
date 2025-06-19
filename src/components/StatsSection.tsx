@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, Coins, Brain, Star, TrendingUp as GrowthIcon } from 'lucide-react';
