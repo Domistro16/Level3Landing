@@ -54,10 +54,10 @@ const Navbar = () => {
           {/* Used gap for consistent spacing */}
           {/* Desktop Hamburger Icon (removed circular background, just icon) */}
           <div className="hidden md:flex items-center">
-            <div className="bg-slate-900 rounded-full p-3 flex flex-col justify-center w-12 h-12">
+            <button className="bg-slate-900 rounded-full p-3 flex flex-col justify-center w-12 h-12">
               <div className="border-[#FFB000] border-b-[2px] w-6"></div>
               <div className="border-[#FFB000] border-b-[2px] w-4 mt-3"></div>
-            </div>
+            </button>
           </div>
           {/* Logo Section */}
           <Link to="/" className="flex items-center gap-1.5">
@@ -118,7 +118,16 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="text-gray-200 hover:text-yellow-400"
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? (
+              <X size={26} />
+            ) : (
+              <div className="items-center">
+                <button className="bg-slate-900 rounded-full p-3 flex flex-col justify-center w-12 h-12">
+                  <div className="border-[#FFB000] border-b-[2px] w-6"></div>
+                  <div className="border-[#FFB000] border-b-[2px] w-4 mt-3"></div>
+                </button>
+              </div>
+            )}
           </Button>
         </div>
       </div>

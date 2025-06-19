@@ -32,7 +32,7 @@ const ReviewCard = ({ review, index }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="glass-effect p-6 rounded-xl card-hover-effect"
+      className="glass-effect p-6 rounded-xl card-hover-effect "
     >
       <div className="flex items-center mb-4">
         <Avatar className="h-12 w-12 border-2 border-primary/50">
@@ -42,10 +42,10 @@ const ReviewCard = ({ review, index }) => {
           </AvatarFallback>
         </Avatar>
         <div className="ml-4">
-          <p className="font-semibold text-slate-100">{review.name}</p>
+          <p className="font-semibold text-slate-100 max-w-5">{review.name}</p>
           <p className="text-xs text-slate-400">{review.handle}</p>
         </div>
-        <div className="ml-auto flex items-center">
+        <div className="ml-auto mt-5 flex items-center">
           {[...Array(5)].map((_, i) => (
             <Star
               key={i}
