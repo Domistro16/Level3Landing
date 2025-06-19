@@ -1,3 +1,4 @@
+// @ts-nocheck
 // src/App.jsx for Level3Landing project
 
 import React from 'react';

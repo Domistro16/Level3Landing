@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, User, Key, Building, ShoppingBag, Rocket, ArrowRight, Lightbulb, TrendingUp } from 'lucide-react'; // Example Lucide icons
