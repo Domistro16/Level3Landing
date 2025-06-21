@@ -39,7 +39,7 @@ const EarnSection = () => {
             Earn <span className="primary-gradient-text">Crypto</span> Your Way
           </h2>
           <p className="section-subtitle">
-                        Earn Crypto by doing what you love <br/>Tasks,challenges,and bounties included with your <code className="text-primary font-bold p-1.5 rounded-md bg-primary/10 shadow-sm">.creator</code> identity.
+            Earn crypto by doing what you love — tasks, challenges, and bounties included with your <code className="text-primary font-bold p-1.5 rounded-md bg-primary/10 shadow-sm">.creator</code> identity.
           </p>
         </motion.div>
 
@@ -87,7 +87,7 @@ const EarnSection = () => {
               <img 
                 className="w-full h-80 object-cover rounded-lg mb-6 shadow-2xl"
                 alt="Crypto earning dashboard with various tasks and rewards"
-               src="https://images.unsplash.com/photo-1571677246347-5040036b95cc" />
+                src="https://images.unsplash.com/photo-1571677246347-5040036b95cc" />
               
               <div className="space-y-4">
                 <div className="flex justify-between items-center">

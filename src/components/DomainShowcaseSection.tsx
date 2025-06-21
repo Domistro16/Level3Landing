@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2, User, Key, Building, ShoppingBag, Rocket, ArrowRight, Lightbulb, TrendingUp } from 'lucide-react'; // Example Lucide icons
@@ -22,8 +21,6 @@ const DomainShowcaseSection = () => {
     transition: { duration: 0.3, ease: "easeOut" }
   };
 
-  // Placeholder data for the domains - content is kept as per user request
-  // Icons are used as placeholder visuals and are not changed as per previous instructions.
   const distinguishDomains = [
     { id: 1, name: "landenx.creator", icon: <Lightbulb className="w-6 h-6 text-blue-400" /> },
     { id: 2, name: "robinsonjr.creator", icon: <User className="w-6 h-6 text-green-400" /> },
@@ -46,36 +43,32 @@ const DomainShowcaseSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#141b33]"> {/* Using the specific hex color for the section background */}
-      {/* Changed grid-cols-2 to grid-cols-10 for more control over column spanning */}
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#141b33]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-10 gap-10">
-        {/* Left Card: Distinguish Yourself - now spans 4 out of 10 columns */}
         <motion.div
           variants={cardVariants}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-slate-900 p-8 rounded-lg shadow-xl relative overflow-hidden flex flex-col lg:col-span-4" // Changed from lg:col-span-6 to lg:col-span-4
+          className="bg-slate-900 p-8 rounded-lg shadow-xl relative overflow-hidden flex flex-col lg:col-span-4"
         >
           <h2 className="text-3xl font-bold text-white mb-4">Distinguish yourself</h2>
           <p className="text-gray-300 mb-8 max-w-md">
             Elevate your brand with a golden tick and connect with top-tier associates.
           </p>
 
-          <div className="relative h-[280px] mt-4 w-full pl-6">
+          <div className="relative flex flex-col items-center space-y-4 mb-4 lg:block lg:h-[280px] lg:mt-4 lg:w-full lg:pl-6">
             {distinguishDomains.map((domain, index) => (
               <motion.div
                 key={domain.id}
                 variants={itemVariants}
-                style={{
-                  position: 'absolute',
-                  top: `${index * 75}px`,
-                  left: `${index * 50}px`,
-                  zIndex: 3 - index
-                }}
-                className="w-full max-w-[calc(100%-100px)] bg-[#1d2644] border border-[#2a345c] p-7 rounded-lg flex items-center justify-between"
+                className={`w-full px-4 bg-[#1d2644] border border-[#2a345c] p-7 rounded-lg flex items-center justify-between
+                  ${index === 0 ? 'lg:absolute lg:top-0 lg:left-0 lg:z-3 lg:max-w-[calc(100%-100px)]' : ''}
+                  ${index === 1 ? 'lg:absolute lg:top-[67px] lg:left-[50px] lg:z-2 lg:max-w-[calc(100%-100px)]' : ''}
+                  ${index === 2 ? 'lg:absolute lg:top-[150px] lg:left-[100px] lg:z-1 lg:max-w-[calc(100%-100px)]' : ''}
+                `}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   {domain.icon}
                   <span className="text-gray-100 font-medium whitespace-nowrap">{domain.name}</span>
                 </div>
@@ -85,13 +78,12 @@ const DomainShowcaseSection = () => {
           </div>
         </motion.div>
 
-        {/* Right Card: Enterprise Insights - now spans 6 out of 10 columns */}
         <motion.div
           variants={cardVariants}
           initial="initial"
           whileInView="animate"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-slate-900 p-8 rounded-lg shadow-xl relative overflow-hidden lg:col-span-6" // Changed from lg:col-span-4 to lg:col-span-6
+          className="bg-slate-900 p-8 rounded-lg shadow-xl relative overflow-hidden lg:col-span-6"
         >
           <h2 className="text-3xl font-bold text-white mb-4">Enterprise Insights</h2>
           <p className="text-gray-300 mb-8">
@@ -99,23 +91,18 @@ const DomainShowcaseSection = () => {
             <br /> market patterns, and trends.
           </p>
 
-          {/* Placeholder for the subtle 'graph' background element */}
           <div className="absolute inset-0 opacity-[0.07]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 170L50 150L100 170L150 150L200 170' stroke='%233a4768' stroke-width='0.8' fill='none'/%3E%3Cpath d='M0 70L50 50L100 70L150 50L200 70' stroke='%233a4768' stroke-width='0.8' fill='none'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '600px 600px', backgroundPosition: 'center' }}></div>
 
-          {/* Top three domain items - now with width of 60% */}
-          <div className="relative bg-[#0c1424] w-[80%] h-[270px] mb-4 z-10 pl-6">
+          <div className="relative flex flex-col items-center space-y-4 mb-4 lg:block lg:bg-[#0c1424] lg:w-[80%] lg:h-[270px] lg:z-10 lg:pl-6">
             {enterpriseDomains.map((domain, index) => (
               <motion.div
                 key={domain.id}
                 variants={itemVariants}
-                style={{
-                  position: 'absolute',
-                  top: `${index * 75}px`,
-                  left: `${index * 50}px`,
-                  zIndex: 3 - index,
-                  margin: '20px'
-                }}
-                className=" mt-[3vh] bg-[#1d2644] border border-[#2a345c] p-7 rounded-lg flex items-center justify-between"
+                className={`w-full px-4 bg-[#1d2644] border border-[#2a345c] p-7 rounded-lg flex items-center justify-between
+                  ${index === 0 ? 'lg:absolute lg:top-[20px] lg:left-[20px] lg:z-3' : ''}
+                  ${index === 1 ? 'lg:absolute lg:top-[89px] lg:left-[70px] lg:z-2' : ''}
+                  ${index === 2 ? 'lg:absolute lg:top-[174px] lg:left-[120px] lg:z-1' : ''}
+                `}
               >
                 <div className="flex items-center gap-3">
                   {domain.icon}
@@ -126,14 +113,13 @@ const DomainShowcaseSection = () => {
             ))}
           </div>
 
-          {/* New Black Padded Container for Bottom Tags Grid */}
-          <div className=" bg-[#0c1323] p-4 rounded-lg relative z-10 w-10/12 ml-auto" style={{ marginTop: '-3vh' }}>
+          <div className="bg-[#0c1323] p-4 rounded-lg relative z-10 w-full mt-4 lg:w-10/12 lg:ml-auto lg:mt-[4vh]">
             <div className="grid grid-cols-2 gap-x-3 gap-y-3">
               {enterpriseTags.map(tag => (
                 <motion.div
                   key={tag.id}
                   variants={tagVariants}
-                  className=" bg-[#1d2644] border border-[#2a345c] px-3.5 py-3 rounded-[5px] flex items-center justify-between text-gray-200 text-sm font-medium hover:bg-[#2a345c] transition-colors duration-200 cursor-pointer"
+                  className="bg-[#1d2644] border border-[#2a345c] px-3.5 py-3 rounded-[5px] flex items-center justify-between text-gray-200 text-sm font-medium hover:bg-[#2a345c] transition-colors duration-200 cursor-pointer"
                 >
                   <div className="flex items-center">
                     {tag.icon}

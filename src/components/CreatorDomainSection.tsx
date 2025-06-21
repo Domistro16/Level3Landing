@@ -2,12 +2,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Fingerprint, ShieldCheck, Globe, Link as LinkIcon, ArrowRight, Sparkles } from 'lucide-react';
+import { Fingerprint, ShieldCheck, Globe, Link as LinkIcon, ArrowRight, Sparkles, Unlock } from 'lucide-react'; // Changed LockOpen to Unlock
 import { Link } from 'react-router-dom';
 
 const CreatorDomainSection = ({ isPage = false }) => {
-  const containerClass = isPage 
-    ? "min-h-screen flex items-center justify-center crypto-pattern py-20 md:py-32 px-4 sm:px-6 lg:px-8" 
+  const containerClass = isPage
+    ? "min-h-screen flex items-center justify-center crypto-pattern py-20 md:py-32 px-4 sm:px-6 lg:px-8"
     : "py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background via-background/90 to-purple-950/20 relative overflow-hidden";
   
   const contentMaxWidth = isPage ? "max-w-3xl" : "max-w-5xl";
@@ -35,14 +35,14 @@ const CreatorDomainSection = ({ isPage = false }) => {
             Mint Your <span className="primary-gradient-text">.creator</span> Domain
           </h2>
           <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-          Establish your unique identity in Web3 A <code className="text-primary font-semibold p-1 rounded bg-primary/10">.creator</code> domain is your passport to exclusive courses, earning opportunities, and verifiable status in the decentralized creator economy.
+            Establish your unique identity in Web3 A <code className="text-primary font-semibold p-1 rounded bg-primary/10">.creator</code> domain is your passport to exclusive courses, earning opportunities, and verifiable status in the decentralized creator economy.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
-              { icon: Fingerprint, title: "Unique Identity", desc: "Stand out with a memorable, personalized Web3 name." },
-              { icon: ShieldCheck, title: "Verified Ownership", desc: "Prove your authenticity and build trust within communities." },
-              { icon: Globe, title: "Universal Access", desc: "Unlock features across the Level3 platform and beyond." }
+              { icon: Fingerprint, title: "Unique Identity", desc: <>Be known. Be trusted. Claim a personalized Web3 name that’s truly yours</> },
+              { icon: ShieldCheck, title: "Verified Ownership", desc: <>Prove your authenticity and earn trust across the decentralized web.</> },
+              { icon: Globe, title: "Universal Access", desc: <>Unlock powerful features across Level3 — and wherever your <code className="text-primary font-semibold p-1 rounded bg-primary/10">.creator</code> goes.</> }
             ].map((item, index) => (
               <motion.div
                 key={item.title}
@@ -70,8 +70,8 @@ const CreatorDomainSection = ({ isPage = false }) => {
               className="bg-gradient-to-r from-primary to-orange-400 hover:from-orange-500 hover:to-primary text-background font-semibold text-lg px-10 py-5 rounded-xl shadow-xl hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105 neon-glow group"
               onClick={() => alert("Redirecting to domain minting service (simulation)...")}
             >
-              <LinkIcon className="w-6 h-6 mr-3" />
-              Claim & Unlock Access
+              <Unlock className="w-6 h-6 mr-3" /> {/* Changed icon from LockOpen to Unlock */}
+              Claim & Unlock Access {/* Text is already "Claim & Unlock Access" */}
               <ArrowRight className="w-5 h-5 ml-2.5 group-hover:translate-x-1 transition-transform" />
             </Button>
             {!isPage && (
