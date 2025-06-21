@@ -1,10 +1,9 @@
-// @ts-nocheck
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Sparkles, ArrowRight, Link as LinkIcon } from 'lucide-react';
 import { Link as RouterLink } from 'react-router-dom';
-// Corrected import paths from alias to relative paths
 import MarqueeSection from './MarqueeSection';
 import DomainShowcaseSection from './DomainShowcaseSection';
 
@@ -23,7 +22,6 @@ const staggerContainer = {
 };
 
 const marqueeItems = [
-  // Updated text values based on the "Suggested Upgrade" from your boss
   { id: 1, text: "AI-Driven, Human-Curated", iconUrl: "https://storage.googleapis.com/hostinger-horizons-assets-prod/f58d1886-73c2-4ebb-b115-6d931332e7b4/de92dff091f07f9e2bacd7989c0e3813.png" },
   { id: 2, text: "Expert-Led Content", iconUrl: "https://storage.googleapis.com/hostinger-horizons-assets-prod/f58d1886-73c2-4ebb-b115-6d931332e7b4/513a1f02093b42a6bec9816e5d2cc115.png" },
   { id: 3, text: "Scalable by Design", iconUrl: "https://storage.googleapis.com/hostinger-horizons-assets-prod/f58d1886-73c2-4ebb-b115-6d931332e7b4/d7f5b36276c0a3b06a4f0902a22eb91e.png" },
@@ -54,16 +52,17 @@ const HeroSection = () => {
             variants={fadeInUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight"
           >
-            Unlock Your
+            Supercharge Your 
             <br />
-            <span className="primary-gradient-text">Web3 Potential</span>
+            <span className="primary-gradient-text">Ambitions with AI</span>
           </motion.h1>
 
           <motion.p
             variants={fadeInUp}
             className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Master AI-driven courses, earn crypto, and define your digital identity. Mint your exclusive <code className="text-primary font-bold p-1.5 rounded-md bg-primary/10 shadow-sm">.creator</code> domain to begin.
+            Learn smarter. Earn in crypto. Define your Web3 identity with confidence.
+Powered by  <code className="text-primary font-bold p-1.5 rounded-md bg-primary/10 shadow-sm">.creator</code> — your passport to the decentralized future.
           </motion.p>
 
           <motion.div
@@ -98,7 +97,6 @@ const HeroSection = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="mt-8" 
       >
-        {/* MarqueeSection is rendered here, now with the updated texts */}
         <MarqueeSection items={marqueeItems} />
       </motion.div>
       <DomainShowcaseSection />
