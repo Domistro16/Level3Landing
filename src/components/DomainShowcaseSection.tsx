@@ -47,7 +47,7 @@ const DomainShowcaseSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-[#141b33]">
+    <section className="py-20 px-1 sm:px-6 lg:px-8 bg-[#141b33]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-10 gap-10">
         {/* Left Card: Distinguish Yourself */}
         <motion.div
@@ -127,7 +127,7 @@ const DomainShowcaseSection = () => {
             ))}
           </div>
 
-          <div className="bg-[#0c1323] p-4 rounded-lg relative z-10 w-full lg:w-10/12 lg:ml-auto lg:mt-[3vh]">
+          <div className="bg-[#0c1323] p-4 rounded-lg relative z-10 w-full mt-4 lg:w-10/12 lg:ml-auto lg:mt-[3vh]">
             <div className="grid grid-cols-2 gap-x-3 gap-y-3">
               {enterpriseTags.map(tag => (
                 <motion.div
