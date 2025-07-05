@@ -42,7 +42,7 @@ const Navbar = () => {
                       ? "bg-[#141b33] py-3 shadow-xl"
                       : "bg-[#141b33] py-1 shadow-lg"
                   }
-                  rounded-lg // Subtle rounded corners all around for the desktop nav
+                  rounded-lg 
                  `}
     >
       {/* Container for main navbar content, stretching to full width of the parent nav */}
