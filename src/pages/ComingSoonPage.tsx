@@ -9,37 +9,37 @@ const ComingSoonPage = () => {
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
-    // In a real application, you would send this email to your backend/newsletter service.
+
     console.log("Newsletter signup email:", email);
     alert(`Awesome! You're on the list, ${email}. We'll notify you when Level3 is ready!`);
-    setEmail(''); // Clear the input field
+    setEmail(''); 
   };
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen text-center text-white p-4 overflow-hidden">
-      {/* Animated Background Gradient - This relies on CSS in index.css/globals.css */}
+      {}
       <div className="absolute inset-0 z-0 animate-gradient-bg"></div>
 
-      {/* Main Content Container - Relative z-index to sit above the background */}
+      {}
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Level3 Logo/Branding with subtle spinning Sparkles */}
+        {}
         <div className="mb-8 flex items-center gap-2 animate-fade-in">
             <Sparkles className="w-9 h-9 text-yellow-300 animate-spin-slow drop-shadow-lg" />
             <span className="text-4xl font-bold text-white tracking-wide drop-shadow-lg">Level3</span>
         </div>
 
-        {/* Main "Coming Soon!" Heading */}
+        {}
         <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold text-yellow-400 mb-6 animate-fade-in drop-shadow-2xl">
           Coming Soon!
         </h1>
 
-        {/* Catchy Tagline */}
+        {}
         <p className="text-xl md:text-2xl text-gray-200 max-w-2xl mb-12 animate-fade-in animation-delay-200 drop-shadow-md">
           Unlocking unparalleled knowledge. Get ready for an extraordinary learning experience.
         </p>
 
-        {/* Newsletter Signup Form */}
+        {}
         <div className="w-full max-w-md animate-fade-in animation-delay-400">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-5 drop-shadow-md">
             Be the First to Master.
@@ -68,7 +68,7 @@ const ComingSoonPage = () => {
           </p>
         </div>
 
-      </div> {/* End Main Content Container */}
+      </div> {}
     </div>
   );
 };

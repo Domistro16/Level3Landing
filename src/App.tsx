@@ -1,15 +1,13 @@
-// @ts-nocheck
-// src/App.jsx for Level3Landing project
+
 
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"; // IMPORTANT: Imported useLocation
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom"; 
 import { Toaster } from "@/components/ui/toaster";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import CreatorDomainSection from "@/components/CreatorDomainSection";
 
-// Import only landing-related pages for this project
 import HomePage from "@/pages/HomePage";
 import ComingSoonPage from "@/pages/ComingSoonPage";
 
@@ -58,14 +56,9 @@ const sharedCourses = [
   },
 ];
 
-// We create a new component here to wrap the main content
-// because useLocation must be used inside a Router context.
 const AppContent = () => {
-  const location = useLocation(); // Get the current URL location
+  const location = useLocation(); 
 
-  // Determine if the footer should be visible.
-  // It will show ONLY if the current path is exactly "/" (the homepage).
-  // The "About" link is an anchor on the homepage, so it's covered by checking for "/".
   const showFooter = location.pathname === '/';
 
   return (
@@ -81,7 +74,7 @@ const AppContent = () => {
           <Route path="/coming-soon" element={<ComingSoonPage />} />
         </Routes>
       </main>
-      {showFooter && <Footer />} {/* Conditionally render the Footer based on showFooter */}
+      {showFooter && <Footer />} {}
       <Toaster />
     </div>
   );
@@ -91,7 +84,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      {/* We render AppContent inside Router so it can use useLocation */}
+      {}
       <AppContent />
     </Router>
   );

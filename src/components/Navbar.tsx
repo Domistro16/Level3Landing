@@ -1,10 +1,9 @@
-// src/components/Navbar.tsx
-// @ts-nocheck
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button"; // Assuming Shadcn UI Button
+import { Button } from "@/components/ui/button"; 
 import { Menu, X, Shield, BookOpen } from "lucide-react";
-import { Link, NavLink } from "react-router-dom"; // React Router
+import { Link, NavLink } from "react-router-dom"; 
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -18,15 +17,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Define navigation links for both desktop and mobile menus
   const navLinks = [
-    { to: "/coming-soon", label: "Courses", isExternal: false }, // Links to Coming Soon Page
-    { to: "/coming-soon", label: "Earn", isExternal: false },     // Links to Coming Soon Page
+    { to: "/coming-soon", label: "Courses", isExternal: false },
+    { to: "/coming-soon", label: "Earn", isExternal: false },    
     { href: "/#about", label: "About", isExternal: false },
-    { to: "/coming-soon", label: "Mint Domain", isExternal: false }, // Links to Coming Soon Page
+    { to: "/coming-soon", label: "Mint Domain", isExternal: false }, 
   ];
 
-  // Tailwind CSS classes for active navigation links
   const activeLinkClasses = "text-yellow-400 font-semibold";
 
   return (
@@ -45,7 +42,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center h-14">
         <div className="flex items-center gap-2">
-          {/* Desktop Hamburger Icon (hidden on small screens) */}
+          {}
           <div className="hidden md:flex items-center">
             <div className="bg-slate-900 rounded-full p-3 flex flex-col justify-center w-12 h-12 cursor-pointer">
               <div className="border-[#FFB000] border-b-[2px] w-6"></div>
@@ -58,7 +55,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Desktop Navigation Links */}
+        {}
         <div className="hidden md:flex items-center space-x-7">
           {navLinks.map((link) =>
             link.isExternal || link.href ? (
@@ -85,8 +82,8 @@ const Navbar = () => {
               </NavLink>
             )
           )}
-          {/* "View Courses" button */}
-          <Link to="/coming-soon"> {/* Links to Coming Soon Page */}
+          {}
+          <Link to="/coming-soon"> {}
             <Button className="bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-semibold px-6 py-2.5 rounded-lg shadow-md transition-all duration-300">
               <BookOpen className="w-4 h-4 mr-2" />
               View Courses
@@ -94,7 +91,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle Button */}
+        {}
         <div className="md:hidden">
           <Button
             variant="ghost"
@@ -116,7 +113,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Content (conditionally rendered) */}
+      {}
       {mobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
@@ -150,8 +147,8 @@ const Navbar = () => {
                 </NavLink>
               )
             )}
-            {/* "View Courses" button in mobile menu */}
-            <Link to="/coming-soon" className="w-3/4"> {/* Links to Coming Soon Page */}
+            {}
+            <Link to="/coming-soon" className="w-3/4"> {}
               <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-zinc-900 font-semibold px-6 py-3 rounded-lg shadow-md transition-all duration-300">
                 <BookOpen className="w-4 h-4 mr-2" />
                 View Courses
