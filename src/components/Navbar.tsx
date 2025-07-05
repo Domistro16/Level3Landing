@@ -27,18 +27,19 @@ const Navbar = () => {
   const activeLinkClasses = "text-yellow-400 font-semibold";
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+     <motion.nav
+      initial={{ opacity: 0, y: -30 }} // Initial animation state
+      animate={{ opacity: 1, y: 0 }} // Animation to visible state
+      transition={{ duration: 0.7, ease: "easeOut" }} // Animation transition properties
+      // Adjusted background color to the specific hex code #141b33
       className={`fixed top-4 left-0 right-0 max-w-7xl mx-auto z-50 transition-all duration-300 px-1 sm:px-6 lg:px-8
                   ${
                     isScrolled || mobileMenuOpen
                       ? "bg-[#141b33] py-3 shadow-xl"
                       : "bg-[#141b33] py-1 shadow-lg"
                   }
-                  rounded-lg
-                  `}
+                  rounded-lg 
+                 `}
     >
       <div className="flex justify-between items-center h-14">
         <div className="flex items-center gap-2">
